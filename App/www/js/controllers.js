@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $state , $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -38,6 +38,7 @@ angular.module('starter.controllers', [])
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
+    $state.go('app.search');
   };
 })
 
@@ -57,13 +58,13 @@ $scope.names=["rashmi","arpi","cc"];
 $http.get("http://52.88.11.187/findpatients.php")
   .success(function (response) {$scope.patients = response.records;});
 
-$scope.addRow = function(){		
+$scope.addRow = function(){
 console.log("redirection code to be written");
 //write code to insert DB
 };
-$scope.removeRow = function(name){	
+$scope.removeRow = function(name){
 		console.log("here");
-		var index = -1;		
+		var index = -1;
 		var comArr = eval( $scope.companies );
 		for( var i = 0; i < comArr.length; i++ ) {
 			if( comArr[i].name === name ) {
@@ -74,7 +75,7 @@ $scope.removeRow = function(name){
 		if( index === -1 ) {
 			alert( "Something gone wrong" );
 		}
-		$scope.companies.splice( index, 1 );		
+		$scope.companies.splice( index, 1 );
 	};
 })
 

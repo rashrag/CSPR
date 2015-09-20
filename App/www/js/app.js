@@ -26,6 +26,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('dash', {
+      url: '/dash',
+      abstract: true,
+      templateUrl: 'templates/dash.html',
+      controller: 'AppCtrl'
+    })
+  .state('dash.landing', {
+        url: '/landing',
+        views: {
+          'home': {
+            templateUrl: 'templates/landing.html'
+          }
+        }
+      })
+
     .state('app', {
     url: '/app',
     abstract: true,
@@ -33,7 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
- 
+
 
   .state('app.browse', {
       url: '/browse',
@@ -52,17 +67,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-	
-	 .state('app.landing', {
-      url: '/landing',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/landing.html',
-          controller: 'AppCtrl'
-        }
-      }
-    })
-	
+
+
+
 	.state('app.search', {
       url: '/search',
       views: {
@@ -84,5 +91,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
   // if none of the above states are matched, use this as the fallback
 // $urlRouterProvider.otherwise('/app/playlists');
-  $urlRouterProvider.otherwise('/app/landing');
+  $urlRouterProvider.otherwise('/dash/landing');
 });
