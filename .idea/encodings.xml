@@ -7,5 +7,6 @@
     <file url="file://$PROJECT_DIR$/App/www/templates/dash.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/landing.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/App/www/templates/menu.html" charset="UTF-8" />
   </component>
 </project>

@@ -38,6 +38,7 @@ angular.module('starter.controllers', [])
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
+    //Changing state to app
     $state.go('app.search');
   };
 })

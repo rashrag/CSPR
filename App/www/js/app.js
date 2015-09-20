@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-
+//Created new state called dash
   .state('dash', {
       url: '/dash',
       abstract: true,
