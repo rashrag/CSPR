@@ -52,18 +52,20 @@ angular.module('starter.controllers', [])
   ];
 })
 
+
+
 .controller("SearchCtrl", function($scope,$http) {
 $scope.names=["rashmi","arpi","cc"];
 $http.get("http://52.88.11.187/findpatients.php")
   .success(function (response) {$scope.patients = response.records;});
 
-$scope.addRow = function(){		
+$scope.addRow = function(){
 console.log("redirection code to be written");
 //write code to insert DB
 };
-$scope.removeRow = function(name){	
+$scope.removeRow = function(name){
 		console.log("here");
-		var index = -1;		
+		var index = -1;
 		var comArr = eval( $scope.companies );
 		for( var i = 0; i < comArr.length; i++ ) {
 			if( comArr[i].name === name ) {
@@ -74,9 +76,15 @@ $scope.removeRow = function(name){
 		if( index === -1 ) {
 			alert( "Something gone wrong" );
 		}
-		$scope.companies.splice( index, 1 );		
+		$scope.companies.splice( index, 1 );
 	};
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+.controller('PatientDetails',function($scope, $stateParams){
+  $scope.preferences = {gender: [ {selected: true, name : "Male", value: 1}, {selected: true, name : "Female", value: 2} ]};
+  $scope.prefGender = $scope.preferences.gender[0];
+
+})

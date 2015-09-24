@@ -33,8 +33,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
- 
-
+ .state('app.patientdetails',{
+        url:'/patientdetails',
+        views: {
+          'menuContent':{
+            templateUrl: 'templates/patientDetails.html',
+            controller: 'PatientDetails'
+          }
+        }
+      })
   .state('app.browse', {
       url: '/browse',
       views: {
@@ -52,7 +59,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-	
 	 .state('app.landing', {
       url: '/landing',
       views: {
@@ -62,7 +68,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-	
+    .state('app.something',{
+      url:'/somethinghere',
+       views: {
+        'menuContent': {
+          templateUrl: 'templates/patientDetails.html',
+          controller: 'PatientDetails'
+        }
+       }
+    })
 	.state('app.search', {
       url: '/search',
       views: {
