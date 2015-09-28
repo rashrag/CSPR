@@ -15,9 +15,8 @@
    foreach ($cursor as $document) {
      if ($outp != "") 
 	 {$outp .= ",";}
-    $outp .= '{"Name":"'  . $document["name"] . '",';
-    $outp .= '"Id":"'   . $document["id"]        . '",';
-    $outp .= '"City":"'. $document["city"]     . '"}';
+    $outp .= '{"title":"'  . $document["title"] . '",';
+    $outp .= '"id":"'   . $document["id"]        . '",';
 	}
 
    $outp ='{"records":['.$outp.']}';

@@ -43,8 +43,29 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
+.controller('KpiCtrl', function($scope,$http, $state , $ionicPopup, $timeout) {
+  console.log("came here");
+   $http.get("http://52.88.11.187/kpi.php?type=1")
+		.success(function (response) {$scope.kpilists = response.records);
+  };
+  $scope.add=function(){
+	  console.log("came to add");
+	  $ionicPopup.prompt({
+       title: 'Enter title',
+	   template: 'Please enter your text here',
+	   inputType: 'text',
+	   inputPlaceholder: 'Your text here'
+		}).then(function(res) {
+			$http.get("http://52.88.11.187/kpi.php?type=2&kpiname="+res)
+			.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});	
+		});
+  };
+  $scope.delete=function(id){
+	  $http.get("http://52.88.11.187/kpi.php?type=3&kpiname"+id)
+		.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});
+  };
+/*
+  $scope.kpilists = [
     { title: 'Screenings', id: 1 },
     { title: 'Visits', id: 2 },
     { title: 'Registrations', id: 3 },
@@ -52,10 +73,11 @@ angular.module('starter.controllers', [])
     { title: 'KPI#1', id: 5 },
     { title: 'KPI#2', id: 6 }
   ];
+  
+ */ 
 })
 
 .controller("SearchCtrl", function($scope,$http) {
-$scope.names=["rashmi","arpi","cc"];
 $http.get("http://52.88.11.187/findpatients.php")
   .success(function (response) {$scope.patients = response.records;});
 
@@ -79,6 +101,8 @@ $scope.removeRow = function(name){
 		$scope.companies.splice( index, 1 );
 	};
 })
+
+
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

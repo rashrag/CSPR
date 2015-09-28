@@ -1,0 +1,17 @@
+<ion-view view-title="Key Point Indicators">
+<br>
+<br>
+<ion-nav-view >
+<ion-list>
+ 
+<div class="card" ng-repeat="kpi in kpilists" on-swipe-left="delete(kpi)">
+  <div class="item item-text-wrap">
+	 {{ kpi.id }} : {{kpi.title}} 
+  </div>
+</div>
+<div style="position:absolute; right: 0">
+	<button class="button icon ion-plus-circled" ng-click="add()"></button>
+</div>
+</ion-list>
+  </ion-nav-view>
+</ion-view>

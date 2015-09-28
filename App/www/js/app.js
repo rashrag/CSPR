@@ -79,6 +79,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+	
+	.state('app.kpi', {
+      url: '/kpi',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/kpi.html',
+          controller: 'KpiCtrl'
+        }
+      }
+    })
+	
 
   .state('app.single', {
     url: '/playlists/:playlistId',
