@@ -1,0 +1,122 @@
+<ion-view view-title="Patient Details" name='menuContent'>
+
+  <ion-header-bar>
+    <h1 class="title">Patient Details</h1>
+
+    </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doInsert()">
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Name</span>
+    <input type="text"ng-model="patientdata.name">
+    </label>
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Date Of Birth</span>
+    <input type="date"ng-model="patientdata.dob">
+    </label>
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Gender</span>
+    <!--ng-selectgender-->
+
+    <select ng-model="prefGender" ng-options="gender.name for gender in preferences.gender">
+    </select>
+    </label>
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Address</span>
+    <input type="text"ng-model="patientdata.address">
+    </label>
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Telephone Number</span>
+    <input type="tel"ng-model="patientdata.phone">
+    </label>
+
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Mobile Number</span>
+    <input type="tel"ng-model="patientdata.mobile">
+    </label>
+
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Email</span>
+    <input type="email"ng-model="patientdata.email">
+    </label>
+   </ion-item>
+
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Income Per Annum</span>
+    <input type="number"ng-model="patientdata.income">
+    </label>
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Occupation</span>
+    <input type="text"ng-model="patientdata.occupation">
+    </label>
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Marital Status</span>
+    <input type="text"ng-model="patientdata.maritalstatus">
+    </label>
+
+
+
+    <label class="item item-input">
+    <span class="input-label">Number of Children</span>
+    <input type="number"ng-model="patientdata.noofchildren">
+    </label>
+
+
+
+     <label class="item item-input">
+    <span class="input-label">Living</span>
+    <input type="number"ng-model="patientdata.livingchildren">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Dead</span>
+      <input type="number"ng-model="patientdata.deadchildren">
+    </label>
+
+
+
+    <label class="item">
+        <button class="button button-block button-positive" type="submit">Submit</button>
+   </label>
+
+
+    </div>
+    </form>
+  </ion-content>
+</ion-view>

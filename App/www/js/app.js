@@ -49,6 +49,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 
+ .state('app.patientdetails',{
+        url:'/patientdetails',
+        views: {
+          'menuContent':{
+            templateUrl: 'templates/patientDetails.html',
+            controller: 'PatientDetails'
+          }
+        }
+      })
+
+
+
 
   .state('app.browse', {
       url: '/browse',
@@ -67,6 +79,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+	 .state('app.landing', {
+      url: '/landing',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/landing.html',
+          controller: 'AppCtrl'
+        }
+      }
+    })
+    .state('app.something',{
+      url:'/somethinghere',
+       views: {
+        'menuContent': {
+          templateUrl: 'templates/patientDetails.html',
+          controller: 'PatientDetails'
+        }
+       }
+    })
+
+
 
 
 

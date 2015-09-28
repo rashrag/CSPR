@@ -77,6 +77,8 @@ angular.module('starter.controllers', [])
  */ 
 })
 
+
+
 .controller("SearchCtrl", function($scope,$http) {
 $http.get("http://52.88.11.187/findpatients.php")
   .success(function (response) {$scope.patients = response.records;});
@@ -104,5 +106,12 @@ $scope.removeRow = function(name){
 
 
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+
+
+.controller('PatientDetails',function($scope, $stateParams){
+  $scope.preferences = {gender: [ {selected: true, name : "Male", value: 1}, {selected: true, name : "Female", value: 2} ]};
+  $scope.prefGender = $scope.preferences.gender[0];
+
+})
+
 });

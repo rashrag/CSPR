@@ -3,10 +3,17 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/App/www/js/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/js/controllers.js" charset="UTF-8" />
+<<<<<<< HEAD
+    <file url="file://$PROJECT_DIR$/App/www/templates/browse.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/App/www/templates/landing.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/App/www/templates/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/App/www/templates/patientDetails.html" charset="UTF-8" />
+=======
     <file url="file://$PROJECT_DIR$/App/www/js/dash.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/dash.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/landing.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/login.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/App/www/templates/menu.html" charset="UTF-8" />
+>>>>>>> origin/master
   </component>
 </project>
