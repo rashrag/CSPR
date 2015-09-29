@@ -46,8 +46,8 @@ angular.module('starter.controllers', [])
 .controller('KpiCtrl', function($scope,$http, $state , $ionicPopup, $timeout) {
   console.log("came here");
    $http.get("http://52.88.11.187/kpi.php?type=1")
-		.success(function (response) {$scope.kpilists = response.records);
-  };
+		.success(function (response) {$scope.kpilists = response.records
+
   $scope.add=function(){
 	  console.log("came to add");
 	  $ionicPopup.prompt({
@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
 	   inputPlaceholder: 'Your text here'
 		}).then(function(res) {
 			$http.get("http://52.88.11.187/kpi.php?type=2&kpiname="+res)
-			.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});	
+			.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});
 		});
   };
   $scope.delete=function(id){
@@ -73,8 +73,8 @@ angular.module('starter.controllers', [])
     { title: 'KPI#1', id: 5 },
     { title: 'KPI#2', id: 6 }
   ];
-  
- */ 
+
+ */
 })
 
 
