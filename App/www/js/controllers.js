@@ -43,11 +43,14 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('KpiCtrl', function($scope,$http, $state , $ionicPopup, $timeout) {
+.controller('KpiCtrl', function($scope,$http, $state , $ionicPopup, $timeout,$window) {
   console.log("came here");
-   $http.get("http://52.88.11.187/kpi.php?type=1")
-		.success(function (response) {$scope.kpilists = response.records
-
+  $http.get("http://52.88.11.187/kpi.php?type=1")
+  .success(function (response) {$scope.kpilists = response.records;});
+  /*
+  $http.get("http://52.88.11.187/kpi.php?type=1")
+		.success(function (response) {});//$scope.kpilists = response.records;console.log($scope.kpilists);});
+*/
   $scope.add=function(){
 	  console.log("came to add");
 	  $ionicPopup.prompt({
@@ -56,14 +59,19 @@ angular.module('starter.controllers', [])
 	   inputType: 'text',
 	   inputPlaceholder: 'Your text here'
 		}).then(function(res) {
+			console.log(res);
 			$http.get("http://52.88.11.187/kpi.php?type=2&kpiname="+res)
-			.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});
+			.success(function (response) {});
+				$window.location.reload(true);
 		});
   };
-  $scope.delete=function(id){
-	  $http.get("http://52.88.11.187/kpi.php?type=3&kpiname"+id)
-		.success(function (response) {console.log("page must be reloaded");$state.go("app.kpi");});
-  };
+  $scope.remove=function(id){
+	  console.log("came to delete");
+	  console.log("name:"+id.Name+"id="+id);
+	  $http.get("http://52.88.11.187/kpi.php?type=3&kpiname="+id.Name)
+		.success(function (response) {});
+		$window.location.reload(true);
+	};
 /*
   $scope.kpilists = [
     { title: 'Screenings', id: 1 },
@@ -111,7 +119,5 @@ $scope.removeRow = function(name){
 .controller('PatientDetails',function($scope, $stateParams){
   $scope.preferences = {gender: [ {selected: true, name : "Male", value: 1}, {selected: true, name : "Female", value: 2} ]};
   $scope.prefGender = $scope.preferences.gender[0];
-
-})
 
 });

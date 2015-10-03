@@ -4,9 +4,9 @@
 <ion-nav-view >
 <ion-list>
  
-<div class="card" ng-repeat="kpi in kpilists" on-swipe-left="delete(kpi)">
+<div class="card" ng-repeat="kpi in kpilists" on-swipe-left="remove(kpi)">
   <div class="item item-text-wrap">
-	 {{ kpi.id }} : {{kpi.title}} 
+	 {{ kpi.Name}}
   </div>
 </div>
 <div style="position:absolute; right: 0">
